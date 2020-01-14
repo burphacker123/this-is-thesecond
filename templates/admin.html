@@ -1,0 +1,61 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href='{{ url_for("static", filename="css/main.css") }}'>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container-fluid">
+		<div class="container">
+			<div class="formBox">
+				<form method="POST">
+						<div class="row">
+							<div class="col-sm-12">
+								<h1>Natural</h1>
+							</div>
+						</div>
+                        {{ prodst.hidden_tag() }}
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="inputBox ">
+									
+									{{ wtf.form_field(prodst.name) }}
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="inputBox">
+									
+									{{ wtf.form_field(prodst.price) }}
+								</div>
+							</div>
+						</div>
+
+						
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="inputBox">
+									
+									{{ wtf.form_field(prodst.description) }}
+								</div>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-sm-12">
+								<div class="inputBox">
+									
+									{{ wtf.form_field(prodst.image) }}
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12">
+								<input type="submit" class="button" value="Send Message">
+							</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
